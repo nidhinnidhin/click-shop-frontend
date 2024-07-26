@@ -1,5 +1,4 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
   images: {
     domains: ['localhost', 'clock-shop-backend.onrender.com'],
@@ -12,6 +11,14 @@ const nextConfig = {
       },
     ];
   },
+  serverRuntimeConfig: {
+    // Will only be available on the server side
+    mySecret: process.env.MY_SECRET,
+    // Set the port number
+    port: process.env.PORT || 3000,
+  },
+  publicRuntimeConfig: {
+    // Will be available on both server and client
+    staticFolder: '/static',
+  },
 };
-
-module.exports = nextConfig;
