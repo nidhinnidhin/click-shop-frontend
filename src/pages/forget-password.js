@@ -28,7 +28,7 @@ export default function ForgetPassword() {
   };
   const resetPassword = () => {
     axios
-      .post(`http://localhost:8000/account/reset-password/`, {
+      .post(`https://clock-shop-backend.onrender.com/account/reset-password/`, {
         otp: otp,
         email: email,
         password1: password,
@@ -50,7 +50,7 @@ export default function ForgetPassword() {
 
   const generateOtp = () => {
     axios
-      .post(`http://localhost:8000/account/generate-otp/`, {
+      .post(`https://clock-shop-backend.onrender.com/account/generate-otp/`, {
         email: email,
       })
       .then((res) => {
@@ -68,7 +68,7 @@ export default function ForgetPassword() {
   };
   const resendOtp = () => {
     axios
-      .post(`http://localhost:8000/account/generate-otp/`, {
+      .post(`https://clock-shop-backend.onrender.com/account/generate-otp/`, {
         email: email,
       })
       .then((res) => {

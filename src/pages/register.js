@@ -145,7 +145,7 @@ export default function Register() {
       };
 
       axios
-        .post("http://localhost:8000/account/register/", datas, {
+        .post("https://clock-shop-backend.onrender.com/account/register/", datas, {
           headers: {
             "Content-Type": "application/json",
           },
@@ -158,7 +158,7 @@ export default function Register() {
             password: password,
           };
           axios
-            .post("http://localhost:8000/api/login/", data)
+            .post("https://clock-shop-backend.onrender.com/api/login/", data)
             .then((res) => {
               console.log("token");
               console.log(res.data.access);

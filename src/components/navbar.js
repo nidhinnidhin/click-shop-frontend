@@ -100,7 +100,7 @@ export default function Navbar() {
 
   const handleClick = () => {
     axios
-      .post("http://localhost:8000/account/logout/blacklist/", {
+      .post("https://clock-shop-backend.onrender.com/account/logout/blacklist/", {
         refresh_token: localStorage.getItem("refresh_token"),
       })
       .then((res) => {
@@ -163,7 +163,7 @@ export default function Navbar() {
     setIsProducts(searchValue);
 
     axios
-      .get("http://localhost:8000/fashionproduct/search/?search=" + searchValue)
+      .get("https://clock-shop-backend.onrender.com/fashionproduct/search/?search=" + searchValue)
       .then((res) => {
         setProducts(res.data);
         console.log(res.data);

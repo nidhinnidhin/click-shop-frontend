@@ -117,7 +117,7 @@ export default function Login() {
         password: password,
       };
       axios
-        .post("http://localhost:8000/api/login/", data)
+        .post("https://clock-shop-backend.onrender.com/api/login/", data)
         .then((res) => {
           console.log(res.data);
           localStorage.setItem("access_token", res.data.access);

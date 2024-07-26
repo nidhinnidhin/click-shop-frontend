@@ -33,7 +33,7 @@ export default function Orders() {
     const accessToken = localStorage.getItem("access_token");
     if (accessToken) {
       axios
-        .get("http://localhost:8000/cart/cart-checkout-list/", {
+        .get("https://clock-shop-backend.onrender.com/cart/cart-checkout-list/", {
           headers: {
             Authorization: `Bearer ` + localStorage.getItem("access_token"),
             "Content-Type": "application/json",

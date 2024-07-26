@@ -53,7 +53,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export async function getServerSideProps(context) {
   const res = await fetch(
-    "http://localhost:8000/fashionproduct/fashionproductlist/"
+    "https://clock-shop-backend.onrender.com/fashionproduct/fashionproductlist/"
   );
   const datas = await res.json();
 
@@ -82,7 +82,7 @@ export default function FashionProductPage({ posts }) {
 
   const fetchAllProducts = () => {
     axios
-      .get("http://localhost:8000/fashionproduct/fashionproductlist/")
+      .get("https://clock-shop-backend.onrender.com/fashionproduct/fashionproductlist/")
       .then((res) => {
         setProducts(res.data);
         console.log(res.data);
@@ -118,7 +118,7 @@ export default function FashionProductPage({ posts }) {
     var searchValue = e.target.value.replace(/\s+/g, "+");
 
     axios
-      .get("http://localhost:8000/fashionproduct/search/?search=" + searchValue)
+      .get("https://clock-shop-backend.onrender.com/fashionproduct/search/?search=" + searchValue)
       .then((res) => {
         setProducts(res.data);
         console.log(res.data);

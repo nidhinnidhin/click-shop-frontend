@@ -75,7 +75,7 @@ export default function FashionProductDetail({ products }) {
     let typeid = selectedColor;
     axios
       .post(
-        "http://localhost:8000/cart/",
+        "https://clock-shop-backend.onrender.com/cart/",
         {
           product: id,
           count: 1,
@@ -116,7 +116,7 @@ export default function FashionProductDetail({ products }) {
     console.log(typeid);
     axios
       .post(
-        "http://localhost:8000/whishlist/",
+        "https://clock-shop-backend.onrender.com/whishlist/",
         {
           product: id,
           varient: varientid,
@@ -334,31 +334,42 @@ export default function FashionProductDetail({ products }) {
 }
 
 export async function getStaticPaths() {
-  const res = await axios.get(
-    "http://localhost:8000/fashionproduct/fashionproductlist/"
-  );
-  const products = res.data;
+  try {
+    const res = await axios.get(
+      "https://clock-shop-backend.onrender.com/fashionproduct/fashionproductlist/"
+    );
+    const products = res.data;
 
-  const paths = products.map((product) => ({
-    params: { fashionproductdetail: product.id.toString() },
-  }));
+    const paths = products.map((product) => ({
+      params: { fashionproductdetail: product.id.toString() },
+    }));
 
-  return {
-    paths,
-    fallback: false,
-  };
+    return {
+      paths,
+      fallback: false,
+    };
+  } catch (error) {
+    console.error('Error fetching paths:', error);
+    return { paths: [], fallback: false };
+  }
 }
 
 export async function getStaticProps({ params }) {
-  const { fashionproductdetail, variantId, typeId } = params;
+  try {
+    const { fashionproductdetail, variantId, typeId } = params;
+    const res = await axios.get(
+      `https://clock-shop-backend.onrender.com/fashionproduct/fashionproductdetail/${fashionproductdetail}?variantId=${variantId}&typeId=${typeId}`
+    );
 
-  const res = await axios.get(
-    `http://localhost:8000/fashionproduct/fashionproductdetail/${fashionproductdetail}?variantId=${variantId}&typeId=${typeId}`
-  );
-
-  const products = res.data;
-  console.log(products);
-  return {
-    props: { products },
-  };
+    const products = res.data;
+    console.log('Fetched products:', products);
+    return {
+      props: { products },
+    };
+  } catch (error) {
+    console.error('Error fetching product details:', error);
+    return {
+      notFound: true,
+    };
+  }
 }
