@@ -1,0 +1,282 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fasionProducts{
+    height: fit-content;
+    padding: 20px;
+    background-color: white;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+}
+.zoomedArea {
+  position: absolute;
+  width: 100px;
+  height: 100px; 
+  border: 1px solid black;
+  display: none;
+}
+.bigImageContainer:hover .zoomedArea {
+  display: block;
+}
+#cardDescription{
+  height: 50px;
+  overflow: hidden;
+  font-size: 12px;
+}
+.search{
+    border: 0.5px solid lightgray;
+}
+.productsWrapper{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card{
+    width: 200px;
+    height: 250px;
+    margin: 15px 0px;
+    border: 0.5px solid lightgray;
+    padding: 10px;
+    transition: transform 0.5s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.card:hover{
+    transform: scale(1.07);
+}
+.nextBtnWrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 35px;
+}
+.nextBtn{
+    padding: 9px;
+    border-radius: 50%;  
+    border: none;  
+    background-color: rgb(207, 220, 246);
+    color: white;
+}
+#pageCard{
+    width: 262px;
+    margin: 15px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease;
+}
+#pageCard:hover{
+    transform: scale(1.05);
+}
+.availabeVariation{
+  font-size: 12px;
+  color: rgb(57, 57, 255);
+}
+.pageWraper{
+    width: 100%;
+    background-color: #fcfafa;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.pageTitleContainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+}
+.imageWrapper{
+    display: flex;
+    justify-content: center;
+}
+.image{
+    cursor: pointer;
+}
+.mainImage{
+  object-fit: contain;
+  margin-top: 5px;
+}
+/* .productImage{
+  height: 90px;
+  object-fit: contain;
+} */
+.noProducts{
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dropdown {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 0.5px solid #ccc;
+  outline: none;
+  cursor: pointer;
+  color: rgb(78, 77, 77);
+}
+
+.dropdown option {
+  padding: 8px;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pageBtn {
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+.cardContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.pageBtn:hover {
+  background-color: #ddd;
+}
+#cardProductDescription{
+  font-size: 12px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.active {
+  background-color: #333;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    #pageCard {
+      width: 47%;
+      margin: 5px 5px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .title {
+      font-size: 18px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .mainImage {
+      width: 90%;
+      height: 160px;
+      margin: 5px 8px;
+      object-fit: contain;
+    }
+  }
+  @media screen and (max-width: 768px) {
+      #cardProductDescription {
+      font-size: 8px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    #cardTitle {
+      font-size: 14px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    #cardDescription{
+      font-size: 8px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    #cardPrice{
+      font-size: 8px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .pageTitleContainer{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .search{
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 30px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .card{
+      width: 48% !important;
+      height: 200px !important;
+      margin: 8px 2px !important;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .productTitle {
+      font-size: 14px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .nextBtnWrapper {
+      padding: 3px;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .nextBtn {
+      padding: 1px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .dropdown {
+      padding: 5px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .starRating {
+      font-size: 8px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .rating {
+      font-size: 15px !important;
+      margin: 0px !important;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .name {
+      font-size: 14px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .price {
+      font-size: 10px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .cardContent {
+      margin-top: 10px;
+      align-items: start;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .productDiscount {
+      font-size: 10px !important; 
+    }
+  }
+  
+  
