@@ -3,6 +3,9 @@ import styles from "@/styles/MegaMenu.module.css";
 import Link from "next/link";
 
 export default function MegaMenu({ datass }) {
+  const hey = () => {
+    console.log("Hello");
+  }
   return (
     <div className={styles.parentContainer}>
       <div className={styles.container}>
@@ -18,6 +21,7 @@ export default function MegaMenu({ datass }) {
                   alt="image"
                   width={80}
                   height={80}
+                  onClick={hey}
                 />
               </Link>
               <span className={styles.productName}>{data.name}</span>
