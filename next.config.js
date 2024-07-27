@@ -12,11 +12,9 @@ module.exports = {
     ];
   },
   serverRuntimeConfig: {
-    // Set the port number
     port: process.env.PORT || 3000,
   },
   publicRuntimeConfig: {
-    // Will be available on both server and client
     staticFolder: '/static',
   },
 };
