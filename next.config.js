@@ -12,8 +12,6 @@ module.exports = {
     ];
   },
   serverRuntimeConfig: {
-    // Will only be available on the server side
-    mySecret: process.env.MY_SECRET,
     // Set the port number
     port: process.env.PORT || 3000,
   },
