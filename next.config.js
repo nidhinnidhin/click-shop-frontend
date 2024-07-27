@@ -7,7 +7,7 @@ module.exports = {
     return [
       {
         source: '/api/:path*',
-        destination: 'https://clock-shop-backend.onrender.com/:path*',
+        destination: `${process.env.NEXT_PUBLIC_BACKEND_URL}/:path*`,
       },
     ];
   },
