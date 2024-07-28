@@ -20,11 +20,15 @@ export default function EditEmailForm () {
     }
   };
 
+  const sayHello = () => {
+    alert("Hello")
+  }
+
   return (
     <div>
       <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
       <button onClick={handleSendOTP}>Send OTP</button>
-      <p>{message}</p>
+      <p onClick={sayHello}>{message}</p>
     </div>
   );
 };
