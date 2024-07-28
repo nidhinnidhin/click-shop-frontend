@@ -334,42 +334,31 @@ export default function FashionProductDetail({ products }) {
 }
 
 export async function getStaticPaths() {
-  try {
-    const res = await axios.get(
-      "https://clock-shop-backend.onrender.com/fashionproduct/fashionproductlist/"
-    );
-    const products = res.data;
+  const res = await axios.get(
+    "https://clock-shop-backend.onrender.com/fashionproduct/fashionproductlist/"
+  );
+  const products = res.data;
 
-    const paths = products.map((product) => ({
-      params: { fashionproductdetail: product.id.toString() },
-    }));
+  const paths = products.map((product) => ({
+    params: { fashionproductdetail: product.id.toString() },
+  }));
 
-    return {
-      paths,
-      fallback: false,
-    };
-  } catch (error) {
-    console.error('Error fetching paths:', error);
-    return { paths: [], fallback: false };
-  }
+  return {
+    paths,
+    fallback: false,
+  };
 }
 
 export async function getStaticProps({ params }) {
-  try {
-    const { fashionproductdetail, variantId, typeId } = params;
-    const res = await axios.get(
-      `https://clock-shop-backend.onrender.com/fashionproduct/fashionproductdetail/${fashionproductdetail}?variantId=${variantId}&typeId=${typeId}`
-    );
+  const { fashionproductdetail, variantId, typeId } = params;
 
-    const products = res.data;
-    console.log('Fetched products:', products);
-    return {
-      props: { products },
-    };
-  } catch (error) {
-    console.error('Error fetching product details:', error);
-    return {
-      notFound: true,
-    };
-  }
+  const res = await axios.get(
+    `https://clock-shop-backend.onrender.com/fashionproduct/fashionproductdetail/${fashionproductdetail}?variantId=${variantId}&typeId=${typeId}`
+  );
+
+  const products = res.data;
+  console.log(products);
+  return {
+    props: { products },
+  };
 }
